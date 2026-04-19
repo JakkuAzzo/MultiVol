@@ -57,30 +57,42 @@ public actor MacOSVolumeControlService: VolumeControlService {
     private func readDefaultOutputVolume() -> Float? {
         guard let deviceID = defaultOutputDeviceID() else { return nil }
 
-        var volume: Float32 = 0
-        var size = UInt32(MemoryLayout<Float32>.size)
-        var address = AudioObjectPropertyAddress(
-            mSelector: kAudioHardwareServiceDeviceProperty_VirtualMasterVolume,
-            mScope: kAudioDevicePropertyScopeOutput,
-            mElement: kAudioObjectPropertyElementMain
-        )
+        for channel in [UInt32(1), UInt32(2), UInt32(kAudioObjectPropertyElementMain)] {
+            var volume: Float32 = 0
+            var size = UInt32(MemoryLayout<Float32>.size)
+            var address = AudioObjectPropertyAddress(
+                mSelector: kAudioDevicePropertyVolumeScalar,
+                mScope: kAudioDevicePropertyScopeOutput,
+                mElement: channel
+            )
 
-        let status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &size, &volume)
-        return status == noErr ? volume : nil
+            if AudioObjectHasProperty(deviceID, &address) {
+                let status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &size, &volume)
+                if status == noErr {
+                    return volume
+                }
+            }
+        }
+
+        return nil
     }
 
     private func writeDefaultOutputVolume(_ volume: Float) {
         guard let deviceID = defaultOutputDeviceID() else { return }
 
-        var newVolume = Float32(volume)
-        var size = UInt32(MemoryLayout<Float32>.size)
-        var address = AudioObjectPropertyAddress(
-            mSelector: kAudioHardwareServiceDeviceProperty_VirtualMasterVolume,
-            mScope: kAudioDevicePropertyScopeOutput,
-            mElement: kAudioObjectPropertyElementMain
-        )
+        for channel in [UInt32(1), UInt32(2), UInt32(kAudioObjectPropertyElementMain)] {
+            var newVolume = Float32(volume)
+            let size = UInt32(MemoryLayout<Float32>.size)
+            var address = AudioObjectPropertyAddress(
+                mSelector: kAudioDevicePropertyVolumeScalar,
+                mScope: kAudioDevicePropertyScopeOutput,
+                mElement: channel
+            )
 
-        _ = AudioObjectSetPropertyData(deviceID, &address, 0, nil, size, &newVolume)
+            if AudioObjectHasProperty(deviceID, &address) {
+                _ = AudioObjectSetPropertyData(deviceID, &address, 0, nil, size, &newVolume)
+            }
+        }
     }
 }
 #endif

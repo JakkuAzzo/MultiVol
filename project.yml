@@ -1,0 +1,111 @@
+name: MultiVol
+options:
+  bundleIdPrefix: com.jakkuazzo
+  deploymentTarget:
+    iOS: "17.0"
+    macOS: "14.0"
+settings:
+  base:
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_EMIT_LOC_STRINGS: YES
+configs:
+  Debug: debug
+  Release: release
+configFiles:
+  Debug: Config/Debug.xcconfig
+  Release: Config/Release.xcconfig
+schemes:
+  MultiVoliOS:
+    build:
+      targets:
+        MultiVoliOS: all
+        MultiVoliOSWidgetsExtension: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+  MultiVolMac:
+    build:
+      targets:
+        MultiVolMac: all
+        MultiVolMacWidgetsExtension: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+targets:
+  MultiVoliOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: MultiVoliOS
+      - path: MultiVolShared
+    dependencies:
+      - target: MultiVoliOSWidgetsExtension
+        embed: true
+    entitlements:
+      path: Entitlements/MultiVoliOS.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.ios
+        PRODUCT_NAME: MultiVol iOS
+        INFOPLIST_KEY_CFBundleDisplayName: MultiVol
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIRequiresFullScreen: NO
+
+  MultiVolMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: MultiVolMac
+      - path: MultiVolShared
+    dependencies:
+      - target: MultiVolMacWidgetsExtension
+        embed: true
+    entitlements:
+      path: Entitlements/MultiVolMac.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.macos
+        PRODUCT_NAME: MultiVol macOS
+        INFOPLIST_KEY_CFBundleDisplayName: MultiVol
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+
+  MultiVoliOSWidgetsExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: MultiVolWidgets
+      - path: MultiVolShared
+    entitlements:
+      path: Entitlements/MultiVoliOSWidgetsExtension.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.ios.widget
+        PRODUCT_NAME: MultiVol iOS Widget
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        INFOPLIST_KEY_CFBundleDisplayName: MultiVol Widget
+        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        INFOPLIST_KEY_NSExtension_NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MultiVolWidgetBundle
+
+  MultiVolMacWidgetsExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: MultiVolWidgets
+      - path: MultiVolShared
+    entitlements:
+      path: Entitlements/MultiVolMacWidgetsExtension.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.macos.widget
+        PRODUCT_NAME: MultiVol macOS Widget
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        INFOPLIST_KEY_CFBundleDisplayName: MultiVol Widget
+        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
+        INFOPLIST_KEY_NSExtension_NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MultiVolWidgetBundle
