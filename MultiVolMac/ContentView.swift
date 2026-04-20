@@ -1,13 +1,27 @@
 import SwiftUI
+import WidgetKit
+import Combine
 
 struct MacContentView: View {
     private let service = MacOSVolumeControlService()
     @State private var sources: [AudioSource] = []
     @State private var levels: [String: Float] = [:]
 
+    private func refreshSourcesAndLevels() async {
+        let latestSources = await service.allSources()
+        var latestLevels: [String: Float] = levels
+
+        for source in latestSources {
+            latestLevels[source.id] = await service.currentVolume(for: source.id)
+        }
+
+        sources = latestSources
+        levels = latestLevels
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("MultiVol macOS")
+            Text("MultiVol macOS Control Panel")
                 .font(.title2.bold())
 
             ForEach(sources, id: \.id) { source in
@@ -20,7 +34,10 @@ struct MacContentView: View {
                             get: { levels[source.id] ?? 0.5 },
                             set: { newValue in
                                 levels[source.id] = newValue
-                                Task { await service.setVolume(newValue, for: source.id) }
+                                Task {
+                                    await service.setVolume(newValue, for: source.id)
+                                    WidgetCenter.shared.reloadAllTimelines()
+                                }
                             }
                         ),
                         in: 0...1
@@ -35,10 +52,13 @@ struct MacContentView: View {
         }
         .padding(16)
         .task {
-            sources = await service.allSources()
-            for source in sources {
-                levels[source.id] = await service.currentVolume(for: source.id)
+            await refreshSourcesAndLevels()
+
+            for await _ in Timer.publish(every: 2.0, on: .main, in: .common).autoconnect().values {
+                await refreshSourcesAndLevels()
             }
+
+            WidgetCenter.shared.reloadAllTimelines()
         }
     }
 }

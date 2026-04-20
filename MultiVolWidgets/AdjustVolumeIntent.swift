@@ -1,5 +1,6 @@
 import AppIntents
 import Foundation
+import WidgetKit
 
 struct VolumeSourceEntity: AppEntity {
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Audio Source"
@@ -15,13 +16,27 @@ struct VolumeSourceEntity: AppEntity {
 
 struct VolumeSourceEntityQuery: EntityQuery {
     func entities(for identifiers: [VolumeSourceEntity.ID]) async throws -> [VolumeSourceEntity] {
-        AudioSource.defaults
-            .filter { identifiers.contains($0.id) }
+        let persistedIDs = await VolumeStore.shared.load().map(\ .sourceID)
+        let knownEntities = AudioSource.defaults
             .map { VolumeSourceEntity(id: $0.id, name: $0.displayName) }
+        let persistedEntities = persistedIDs.map {
+            VolumeSourceEntity(id: $0, name: AudioSource.displayName(for: $0))
+        }
+
+        let all = Dictionary(uniqueKeysWithValues: (knownEntities + persistedEntities).map { ($0.id, $0) })
+        return identifiers.compactMap { all[$0] }
     }
 
     func suggestedEntities() async throws -> [VolumeSourceEntity] {
-        AudioSource.defaults.map { VolumeSourceEntity(id: $0.id, name: $0.displayName) }
+        let persistedIDs = await VolumeStore.shared.load().map(\ .sourceID)
+        let knownEntities = AudioSource.defaults
+            .map { VolumeSourceEntity(id: $0.id, name: $0.displayName) }
+        let persistedEntities = persistedIDs.map {
+            VolumeSourceEntity(id: $0, name: AudioSource.displayName(for: $0))
+        }
+
+        let deduped = Dictionary(uniqueKeysWithValues: (knownEntities + persistedEntities).map { ($0.id, $0) })
+        return deduped.values.sorted { $0.name < $1.name }
     }
 }
 
@@ -34,6 +49,16 @@ struct AdjustVolumeIntent: AppIntent {
     @Parameter(title: "Increase")
     var increase: Bool
 
+    init() {
+        source = VolumeSourceEntity(id: "system-output", name: "System Output")
+        increase = true
+    }
+
+    init(source: VolumeSourceEntity, increase: Bool) {
+        self.source = source
+        self.increase = increase
+    }
+
     func perform() async throws -> some IntentResult {
         #if os(iOS)
         let service = IOSVolumeControlService()
@@ -45,6 +70,7 @@ struct AdjustVolumeIntent: AppIntent {
 
         let delta: Float = increase ? 0.05 : -0.05
         _ = await service.stepVolume(by: delta, for: source.id)
+        WidgetCenter.shared.reloadAllTimelines()
         return .result()
     }
 }

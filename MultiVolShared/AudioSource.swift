@@ -25,3 +25,20 @@ public struct AudioSource: Identifiable, Codable, Hashable, Sendable {
         .init(id: "call", displayName: "Call", kind: .call)
     ]
 }
+
+public extension AudioSource {
+    static func displayName(for sourceID: String) -> String {
+        if let known = defaults.first(where: { $0.id == sourceID }) {
+            return known.displayName
+        }
+
+        if sourceID.hasPrefix("app.") {
+            return sourceID
+                .replacingOccurrences(of: "app.", with: "")
+                .replacingOccurrences(of: ".", with: " ")
+                .capitalized
+        }
+
+        return sourceID
+    }
+}

@@ -8,13 +8,27 @@ struct MultiVolWidgetView: View {
         VStack(alignment: .leading, spacing: 8) {
             ForEach(entry.sourceLevels, id: \.sourceID) { item in
                 HStack {
-                    Text(item.sourceID)
+                    Text(AudioSource.displayName(for: item.sourceID))
                         .font(.caption2)
                         .lineLimit(1)
                     Spacer()
+                    Button(intent: AdjustVolumeIntent(
+                        source: VolumeSourceEntity(id: item.sourceID, name: AudioSource.displayName(for: item.sourceID)),
+                        increase: false
+                    )) {
+                        Image(systemName: "minus.circle")
+                    }
+                    .buttonStyle(.plain)
                     Text("\(Int(item.volume * 100))%")
                         .font(.caption)
                         .monospacedDigit()
+                    Button(intent: AdjustVolumeIntent(
+                        source: VolumeSourceEntity(id: item.sourceID, name: AudioSource.displayName(for: item.sourceID)),
+                        increase: true
+                    )) {
+                        Image(systemName: "plus.circle")
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
@@ -31,7 +45,7 @@ struct MultiVolWidget: Widget {
             MultiVolWidgetView(entry: entry)
         }
         .configurationDisplayName("MultiVol")
-        .description("See and adjust audio source levels.")
+        .description("Monitor active source levels in a compact control panel widget.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

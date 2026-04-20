@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "707F4F35F5B198F53D48FD95"
-               BuildableName = "MultiVol iOS.app"
-               BlueprintName = "MultiVoliOS"
-               ReferencedContainer = "container:MultiVol.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D11B0C31DFDAB9CB372CA7E"
-               BuildableName = "MultiVol iOS Widget.appex"
-               BlueprintName = "MultiVoliOSWidgetsExtension"
+               BlueprintIdentifier = "81ED8F07B54F8570A5DF87B1"
+               BuildableName = "MultiVol Shared Tests.xctest"
+               BlueprintName = "MultiVolSharedTests"
                ReferencedContainer = "container:MultiVol.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,13 +30,24 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "707F4F35F5B198F53D48FD95"
-            BuildableName = "MultiVol iOS.app"
-            BlueprintName = "MultiVoliOS"
+            BlueprintIdentifier = "81ED8F07B54F8570A5DF87B1"
+            BuildableName = "MultiVol Shared Tests.xctest"
+            BlueprintName = "MultiVolSharedTests"
             ReferencedContainer = "container:MultiVol.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "81ED8F07B54F8570A5DF87B1"
+               BuildableName = "MultiVol Shared Tests.xctest"
+               BlueprintName = "MultiVolSharedTests"
+               ReferencedContainer = "container:MultiVol.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -63,16 +60,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "707F4F35F5B198F53D48FD95"
-            BuildableName = "MultiVol iOS.app"
-            BlueprintName = "MultiVoliOS"
+            BlueprintIdentifier = "81ED8F07B54F8570A5DF87B1"
+            BuildableName = "MultiVol Shared Tests.xctest"
+            BlueprintName = "MultiVolSharedTests"
             ReferencedContainer = "container:MultiVol.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -80,16 +76,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "707F4F35F5B198F53D48FD95"
-            BuildableName = "MultiVol iOS.app"
-            BlueprintName = "MultiVoliOS"
+            BlueprintIdentifier = "81ED8F07B54F8570A5DF87B1"
+            BuildableName = "MultiVol Shared Tests.xctest"
+            BlueprintName = "MultiVolSharedTests"
             ReferencedContainer = "container:MultiVol.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

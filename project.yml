@@ -9,6 +9,8 @@ settings:
     MARKETING_VERSION: 0.1.0
     CURRENT_PROJECT_VERSION: 1
     SWIFT_EMIT_LOC_STRINGS: YES
+    MULTIVOL_IOS_BUNDLE_ID: com.jakkuazzo.multivol.ios
+    MULTIVOL_MAC_BUNDLE_ID: com.jakkuazzo.multivol.macos
 configs:
   Debug: debug
   Release: release
@@ -34,6 +36,14 @@ schemes:
       config: Debug
     archive:
       config: Release
+  MultiVolSharedTests:
+    build:
+      targets:
+        MultiVolSharedTests: all
+    test:
+      config: Debug
+      targets:
+        - MultiVolSharedTests
 targets:
   MultiVoliOS:
     type: application
@@ -48,7 +58,7 @@ targets:
       path: Entitlements/MultiVoliOS.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.ios
+        PRODUCT_BUNDLE_IDENTIFIER: $(MULTIVOL_IOS_BUNDLE_ID)
         PRODUCT_NAME: MultiVol iOS
         INFOPLIST_KEY_CFBundleDisplayName: MultiVol
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
@@ -69,7 +79,7 @@ targets:
       path: Entitlements/MultiVolMac.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.macos
+        PRODUCT_BUNDLE_IDENTIFIER: $(MULTIVOL_MAC_BUNDLE_ID)
         PRODUCT_NAME: MultiVol macOS
         INFOPLIST_KEY_CFBundleDisplayName: MultiVol
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
@@ -79,33 +89,48 @@ targets:
     platform: iOS
     sources:
       - path: MultiVolWidgets
+        excludes:
+          - Info-iOS.plist
+          - Info-macOS.plist
       - path: MultiVolShared
     entitlements:
       path: Entitlements/MultiVoliOSWidgetsExtension.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.ios.widget
+        PRODUCT_BUNDLE_IDENTIFIER: $(MULTIVOL_IOS_BUNDLE_ID).widget
         PRODUCT_NAME: MultiVol iOS Widget
         SKIP_INSTALL: YES
         APPLICATION_EXTENSION_API_ONLY: YES
-        INFOPLIST_KEY_CFBundleDisplayName: MultiVol Widget
-        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
-        INFOPLIST_KEY_NSExtension_NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MultiVolWidgetBundle
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: MultiVolWidgets/Info-iOS.plist
 
   MultiVolMacWidgetsExtension:
     type: app-extension
     platform: macOS
     sources:
       - path: MultiVolWidgets
+        excludes:
+          - Info-iOS.plist
+          - Info-macOS.plist
       - path: MultiVolShared
     entitlements:
       path: Entitlements/MultiVolMacWidgetsExtension.entitlements
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.macos.widget
+        PRODUCT_BUNDLE_IDENTIFIER: $(MULTIVOL_MAC_BUNDLE_ID).widget
         PRODUCT_NAME: MultiVol macOS Widget
         SKIP_INSTALL: YES
         APPLICATION_EXTENSION_API_ONLY: YES
-        INFOPLIST_KEY_CFBundleDisplayName: MultiVol Widget
-        INFOPLIST_KEY_NSExtension_NSExtensionPointIdentifier: com.apple.widgetkit-extension
-        INFOPLIST_KEY_NSExtension_NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).MultiVolWidgetBundle
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: MultiVolWidgets/Info-macOS.plist
+
+  MultiVolSharedTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: MultiVolShared
+      - path: MultiVolSharedTests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.sharedtests
+        PRODUCT_NAME: MultiVol Shared Tests

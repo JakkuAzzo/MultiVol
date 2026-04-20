@@ -1,4 +1,5 @@
 import SwiftUI
+import WidgetKit
 
 struct IOSContentView: View {
     private let service = IOSVolumeControlService()
@@ -16,6 +17,7 @@ struct IOSContentView: View {
                             Task {
                                 let next = await service.stepVolume(by: -0.05, for: source.id)
                                 levels[source.id] = next
+                                WidgetCenter.shared.reloadAllTimelines()
                             }
                         }
                         Slider(
@@ -23,7 +25,10 @@ struct IOSContentView: View {
                                 get: { levels[source.id] ?? 0.5 },
                                 set: { newValue in
                                     levels[source.id] = newValue
-                                    Task { await service.setVolume(newValue, for: source.id) }
+                                    Task {
+                                        await service.setVolume(newValue, for: source.id)
+                                        WidgetCenter.shared.reloadAllTimelines()
+                                    }
                                 }
                             ),
                             in: 0...1
@@ -32,6 +37,7 @@ struct IOSContentView: View {
                             Task {
                                 let next = await service.stepVolume(by: 0.05, for: source.id)
                                 levels[source.id] = next
+                                WidgetCenter.shared.reloadAllTimelines()
                             }
                         }
                     }
