@@ -41,5 +41,10 @@ public actor IOSVolumeControlService: VolumeControlService {
         await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
         await AppOwnedAudioMixer.shared.setVolume(bounded, for: sourceID)
     }
+
+    public func currentLevel(for sourceID: String) async -> Float {
+        await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
+        return await AppOwnedAudioMixer.shared.currentLevel(for: sourceID)
+    }
 }
 #endif

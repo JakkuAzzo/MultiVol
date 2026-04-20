@@ -20,12 +20,15 @@ public actor MacOSVolumeControlService: VolumeControlService {
 
         await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
         let sessions = await MacOSProcessTapController.shared.refreshSessions(store: store)
-        let canLiveMixApps = await MacOSProcessTapController.shared.isLiveMixingActive()
-        let appSources = canLiveMixApps ? sessions.map {
+        let appSources = sessions.map {
             AudioSource(id: $0.id, displayName: $0.displayName, kind: .application)
-        } : []
+        }
 
         return base + ownedBuses + appSources
+    }
+
+    public func isLiveMixingActive() async -> Bool {
+        await MacOSProcessTapController.shared.isLiveMixingActive()
     }
 
     public func currentVolume(for sourceID: String) async -> Float {
@@ -70,6 +73,34 @@ public actor MacOSVolumeControlService: VolumeControlService {
             await store.upsert(bounded, for: sourceID)
             await MacOSProcessTapController.shared.setVolume(bounded, for: sourceID)
         }
+    }
+
+    public func currentLevel(for sourceID: String) async -> Float {
+        switch sourceID {
+        case "system-output":
+            return currentOutputLevelFallback()
+        case "mic-input":
+            return currentInputLevelFallback()
+        default:
+            if sourceID.hasPrefix("owned.") {
+                await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
+                return await AppOwnedAudioMixer.shared.currentLevel(for: sourceID)
+            }
+
+            if sourceID.hasPrefix("app.") || sourceID.hasPrefix("process.") {
+                return await MacOSProcessTapController.shared.activityLevel(for: sourceID)
+            }
+
+            return 0
+        }
+    }
+
+    public func isAppControlSupported(for sourceID: String) async -> Bool {
+        guard sourceID.hasPrefix("app.") || sourceID.hasPrefix("process.") else {
+            return true
+        }
+
+        return await MacOSProcessTapController.shared.isControlSupported(for: sourceID)
     }
 
     public func appSessions() async -> [AppAudioSession] {
@@ -117,6 +148,14 @@ public actor MacOSVolumeControlService: VolumeControlService {
         )
 
         return status == noErr ? deviceID : nil
+    }
+
+    private func currentOutputLevelFallback() -> Float {
+        readDefaultOutputVolume() ?? 0
+    }
+
+    private func currentInputLevelFallback() -> Float {
+        readDefaultInputVolume() ?? 0
     }
 
     private func defaultInputDeviceID() -> AudioDeviceID? {

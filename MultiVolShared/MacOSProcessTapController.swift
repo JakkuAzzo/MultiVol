@@ -40,6 +40,8 @@ public actor MacOSProcessTapController {
             volume: value
         )
         records[sourceID] = record
+
+        _ = applyDirectProcessLevel(value, to: record.session)
         runtime.setGain(value, for: sourceID)
     }
 
@@ -49,6 +51,17 @@ public actor MacOSProcessTapController {
 
     public func isLiveMixingActive() -> Bool {
         runtime.topologyStatus().canActivateLiveMixing
+    }
+
+    public func activityLevel(for sourceID: String) -> Float {
+        guard let record = records[sourceID] else { return 0 }
+        if record.session.processIDs.isEmpty { return 0 }
+        return min(1, 0.25 + (0.1 * Float(record.session.processIDs.count)))
+    }
+
+    public func isControlSupported(for sourceID: String) -> Bool {
+        guard let record = records[sourceID] else { return false }
+        return hasWritableLevelControl(for: record.session)
     }
 
     private func reconcileRecords(with discovered: [AppAudioSession]) {
@@ -261,6 +274,144 @@ public actor MacOSProcessTapController {
         let status = AudioObjectGetPropertyData(objectID, &address, 0, nil, &size, &unmanagedValue)
         guard status == noErr, let unmanagedValue else { return nil }
         return unmanagedValue.takeUnretainedValue() as String
+    }
+
+    private func applyDirectProcessLevel(_ value: Float, to session: AppAudioSession) -> Bool {
+        let bounded = max(0, min(1, value))
+        var didApply = false
+
+        for processObjectID in session.processObjectIDs {
+            if writeLevelScalar(bounded, objectID: processObjectID) {
+                didApply = true
+            }
+
+            for ownedID in ownedObjectIDs(for: processObjectID) where isLevelControlObject(ownedID) {
+                if writeLevelScalar(bounded, objectID: ownedID) {
+                    didApply = true
+                }
+            }
+        }
+
+        return didApply
+    }
+
+    private func hasWritableLevelControl(for session: AppAudioSession) -> Bool {
+        for processObjectID in session.processObjectIDs {
+            if isWritableLevelObject(processObjectID) {
+                return true
+            }
+
+            for ownedID in ownedObjectIDs(for: processObjectID) where isLevelControlObject(ownedID) {
+                if isWritableLevelObject(ownedID) {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
+    private func writeLevelScalar(_ value: Float, objectID: AudioObjectID) -> Bool {
+        var scalar = Float32(value)
+        let size = UInt32(MemoryLayout<Float32>.size)
+        let selectors: [AudioObjectPropertySelector] = [
+            kAudioLevelControlPropertyScalarValue,
+            kAudioDevicePropertyVolumeScalar
+        ]
+        let scopes: [AudioObjectPropertyScope] = [
+            kAudioObjectPropertyScopeGlobal,
+            kAudioDevicePropertyScopeOutput,
+            kAudioDevicePropertyScopeInput
+        ]
+
+        for selector in selectors {
+            for scope in scopes {
+                var address = AudioObjectPropertyAddress(
+                    mSelector: selector,
+                    mScope: scope,
+                    mElement: kAudioObjectPropertyElementMain
+                )
+
+                guard AudioObjectHasProperty(objectID, &address) else { continue }
+
+                let status = AudioObjectSetPropertyData(objectID, &address, 0, nil, size, &scalar)
+                if status == noErr {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
+    private func isWritableLevelObject(_ objectID: AudioObjectID) -> Bool {
+        let selectors: [AudioObjectPropertySelector] = [
+            kAudioLevelControlPropertyScalarValue,
+            kAudioDevicePropertyVolumeScalar
+        ]
+        let scopes: [AudioObjectPropertyScope] = [
+            kAudioObjectPropertyScopeGlobal,
+            kAudioDevicePropertyScopeOutput,
+            kAudioDevicePropertyScopeInput
+        ]
+
+        for selector in selectors {
+            for scope in scopes {
+                var address = AudioObjectPropertyAddress(
+                    mSelector: selector,
+                    mScope: scope,
+                    mElement: kAudioObjectPropertyElementMain
+                )
+
+                guard AudioObjectHasProperty(objectID, &address) else { continue }
+
+                var isSettable: DarwinBoolean = false
+                let status = AudioObjectIsPropertySettable(objectID, &address, &isSettable)
+                if status == noErr && isSettable.boolValue {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
+    private func ownedObjectIDs(for objectID: AudioObjectID) -> [AudioObjectID] {
+        var address = AudioObjectPropertyAddress(
+            mSelector: kAudioObjectPropertyOwnedObjects,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMain
+        )
+        var size: UInt32 = 0
+
+        guard AudioObjectGetPropertyDataSize(objectID, &address, 0, nil, &size) == noErr else {
+            return []
+        }
+
+        let count = Int(size) / MemoryLayout<AudioObjectID>.size
+        var values = Array(repeating: AudioObjectID(), count: count)
+
+        guard AudioObjectGetPropertyData(objectID, &address, 0, nil, &size, &values) == noErr else {
+            return []
+        }
+
+        return values
+    }
+
+    private func isLevelControlObject(_ objectID: AudioObjectID) -> Bool {
+        var address = AudioObjectPropertyAddress(
+            mSelector: kAudioObjectPropertyClass,
+            mScope: kAudioObjectPropertyScopeGlobal,
+            mElement: kAudioObjectPropertyElementMain
+        )
+        var classID: AudioClassID = 0
+        var size = UInt32(MemoryLayout<AudioClassID>.size)
+
+        guard AudioObjectGetPropertyData(objectID, &address, 0, nil, &size, &classID) == noErr else {
+            return false
+        }
+
+        return classID == kAudioLevelControlClassID || classID == kAudioVolumeControlClassID
     }
 
     private func defaultOutputContext() -> MacOSProcessTapMixerRuntime.OutputContext? {

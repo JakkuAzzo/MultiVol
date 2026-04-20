@@ -32,6 +32,7 @@ public actor AppOwnedAudioMixer {
     private var filePlayers: [String: AVAudioPlayerNode] = [:]
     private var externalPlayers: [String: AVAudioPlayerNode] = [:]
     private var microphoneAttachedBuses: Set<String> = []
+    private let meterState = MeterState()
     private var configured = false
 
     public init() {}
@@ -50,6 +51,7 @@ public actor AppOwnedAudioMixer {
             engine.attach(mixer)
             engine.connect(mixer, to: engine.mainMixerNode, format: nil)
             busMixers[bus.id] = mixer
+            installMeterTap(for: bus.id, mixer: mixer)
         }
 
         if !engine.isRunning {
@@ -168,6 +170,18 @@ public actor AppOwnedAudioMixer {
         busMixers[busID]?.outputVolume
     }
 
+    public func currentLevel(for busID: String) -> Float {
+        meterState.level(for: busID)
+    }
+
+    private func installMeterTap(for busID: String, mixer: AVAudioMixerNode) {
+        let format = mixer.outputFormat(forBus: 0)
+        mixer.installTap(onBus: 0, bufferSize: 1024, format: format) { [meterState] buffer, _ in
+            let level = Self.calculateLevel(from: buffer)
+            meterState.update(level, for: busID)
+        }
+    }
+
     private static func makePCMBuffer(from file: AVAudioFile) -> AVAudioPCMBuffer? {
         let frameCount = AVAudioFrameCount(file.length)
         guard let buffer = AVAudioPCMBuffer(pcmFormat: file.processingFormat, frameCapacity: frameCount) else {
@@ -181,6 +195,24 @@ public actor AppOwnedAudioMixer {
         }
 
         return buffer
+    }
+
+    private static func calculateLevel(from buffer: AVAudioPCMBuffer) -> Float {
+        guard let channels = buffer.floatChannelData else { return 0 }
+
+        let channelCount = Int(buffer.format.channelCount)
+        let frameLength = Int(buffer.frameLength)
+        guard channelCount > 0, frameLength > 0 else { return 0 }
+
+        var maxSample: Float = 0
+        for channel in 0..<channelCount {
+            let samples = channels[channel]
+            for frame in 0..<frameLength {
+                maxSample = max(maxSample, fabsf(samples[frame]))
+            }
+        }
+
+        return max(0, min(1, maxSample))
     }
 
     private static func makeSineBuffer(
@@ -214,6 +246,24 @@ public actor AppOwnedAudioMixer {
         }
 
         return buffer
+    }
+}
+
+private final class MeterState: @unchecked Sendable {
+    private var levels: [String: Float] = [:]
+    private let lock = NSLock()
+
+    func update(_ level: Float, for busID: String) {
+        lock.lock()
+        levels[busID] = max(0, min(1, level))
+        lock.unlock()
+    }
+
+    func level(for busID: String) -> Float {
+        lock.lock()
+        let value = levels[busID] ?? 0
+        lock.unlock()
+        return value
     }
 }
 
