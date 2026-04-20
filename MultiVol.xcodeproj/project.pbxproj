@@ -10,8 +10,6 @@
 		058D0C2980C9F7373A244E38 /* MockVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6883118EEFCF5E64450088F8 /* MockVolumeControlService.swift */; };
 		06A1F0414BE61F589A62B45F /* MultiVolAudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8F753CFCCF7884CFB8D3FF4E /* MultiVolAudioDevice.cpp */; };
 		09A85E9A7E806F4C3364AE6C /* MockVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6883118EEFCF5E64450088F8 /* MockVolumeControlService.swift */; };
-		9F5B5AE91B5E43DAA82D6C01 /* AudioDriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5B5AEC1B5E43DAA82D6C01 /* AudioDriverKit.framework */; };
-		9F5B5AEA1B5E43DAA82D6C01 /* DriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5B5AED1B5E43DAA82D6C01 /* DriverKit.framework */; };
 		0DDC313AB46C2A921E6BD02E /* AppOwnedMixerBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE041AE5B6F5CF7F12B5945 /* AppOwnedMixerBootstrap.swift */; };
 		0E8474CA9D0FC58A716FCAA9 /* AudioProviderAdapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BFB0DACF7BF8AB49712F2E /* AudioProviderAdapters.swift */; };
 		13FB91C211EEB4B45D65901D /* MacOSVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6687A11D023E37D558F1310 /* MacOSVolumeControlService.swift */; };
@@ -25,7 +23,7 @@
 		1FA081A5F416863793F86F36 /* MacOSDedicatedOutputRouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531E8C1D9AE97C14F5D644DF /* MacOSDedicatedOutputRouteManager.swift */; };
 		2218D5FC6A3F3725C60956B7 /* AdjustVolumeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5399D41D3B424BC687B045 /* AdjustVolumeIntent.swift */; };
 		237F05AE26214B8CDDCEDA30 /* VolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01A2FFB11480946E4D1862B /* VolumeControlService.swift */; };
-		2380D2F73FEB83B903E78031 /* MultiVoliOSWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEFE95509BEB6956DEED3B8C /* MultiVoliOSWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2380D2F73FEB83B903E78031 /* MultiVol iOS Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EEFE95509BEB6956DEED3B8C /* MultiVol iOS Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		23BC82F51CA1EC3814C9296D /* IOSVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD25CCB8415018BF847DE4B1 /* IOSVolumeControlService.swift */; };
 		2C2AF8161B436F68F82B585F /* MockVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6883118EEFCF5E64450088F8 /* MockVolumeControlService.swift */; };
 		2FA1CB2208F8C7B80F9A7BB5 /* MacOSProcessTapMixerRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65446735D8FE1AD82D38610 /* MacOSProcessTapMixerRuntime.swift */; };
@@ -50,7 +48,7 @@
 		4C0DFA029976FD7A1F51AAB4 /* MacOSProcessTapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9897964ADABB7553CD47E /* MacOSProcessTapController.swift */; };
 		4DEE94CDE6FC1749588C5B10 /* AppOwnedStreamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC10E277AE1106BF58D9E07 /* AppOwnedStreamRouter.swift */; };
 		4E40398481F946205F6736FD /* VolumeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237C820CCACE854B239C27 /* VolumeStore.swift */; };
-		548EF562BBE129DE667BE7EB /* MultiVolMacWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8672387A709247AF81C9B0B1 /* MultiVolMacWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		548EF562BBE129DE667BE7EB /* MultiVol macOS Widget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8672387A709247AF81C9B0B1 /* MultiVol macOS Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		555EDEDFE3C7E9FFD8354027 /* MultiVolAudioStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA24DAF64390007153F96A5B /* MultiVolAudioStream.cpp */; };
 		5A4B4AD3B05869471D6E4B8D /* MockVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6883118EEFCF5E64450088F8 /* MockVolumeControlService.swift */; };
 		5CA2E00C0F45D35213718981 /* MultiVolWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87EAFA0D164A3FC0C8C36C7 /* MultiVolWidgetProvider.swift */; };
@@ -75,6 +73,9 @@
 		95F347D93D4BAAC29124D41A /* MacOSVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6687A11D023E37D558F1310 /* MacOSVolumeControlService.swift */; };
 		96314E6FC9A8E99A605D2FE2 /* AudioSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F9801C5F938E0B88B92B85 /* AudioSource.swift */; };
 		98BB1A5B2E2741FC2B667111 /* MultiVolOwnedOutputRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902C86EDD06DE925FA9B3BB /* MultiVolOwnedOutputRoute.swift */; };
+		9F5B5AE51B5E43DAA82D6C01 /* MultiVol Audio Driver.dext in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 5A68EF5F809FAF4DCEC3FC88 /* MultiVol Audio Driver.dext */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F5B5AE91B5E43DAA82D6C01 /* AudioDriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5B5AEC1B5E43DAA82D6C01 /* AudioDriverKit.framework */; };
+		9F5B5AEA1B5E43DAA82D6C01 /* DriverKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F5B5AED1B5E43DAA82D6C01 /* DriverKit.framework */; };
 		A46670A041744664FBE591EC /* VolumeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC237C820CCACE854B239C27 /* VolumeStore.swift */; };
 		A94FF191CBC776BB34587045 /* MacOSProcessTapMixerRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65446735D8FE1AD82D38610 /* MacOSProcessTapMixerRuntime.swift */; };
 		AAF4E110AB9128FA49967980 /* MultiVolAudioStream.iig in Sources */ = {isa = PBXBuildFile; fileRef = BB678F6955B44258FE3B23FE /* MultiVolAudioStream.iig */; };
@@ -114,7 +115,6 @@
 		FC15A6B1197E4BA488E0976D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B74E419186F706F63B01D11 /* ContentView.swift */; };
 		FD8DA041650AC60C24C165AE /* MultiVolAudioUserClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4C48424CA02D7C72FD78F34 /* MultiVolAudioUserClient.cpp */; };
 		FF2FA87B697F28E7F4B73D39 /* MacOSVolumeControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6687A11D023E37D558F1310 /* MacOSVolumeControlService.swift */; };
-		9F5B5AE51B5E43DAA82D6C01 /* MultiVolAudioDriverExtension.dext in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 5A68EF5F809FAF4DCEC3FC88 /* MultiVolAudioDriverExtension.dext */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,18 +148,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2380D2F73FEB83B903E78031 /* MultiVoliOSWidgetsExtension.appex in Embed Foundation Extensions */,
-			);
-			name = "Embed Foundation Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0F8A978441F6025EFB1DA7C /* Embed Foundation Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				548EF562BBE129DE667BE7EB /* MultiVolMacWidgetsExtension.appex in Embed Foundation Extensions */,
+				2380D2F73FEB83B903E78031 /* MultiVol iOS Widget.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,24 +159,23 @@
 			dstPath = Contents/SystemExtensions;
 			dstSubfolderSpec = 1;
 			files = (
-				9F5B5AE51B5E43DAA82D6C01 /* MultiVolAudioDriverExtension.dext in Embed System Extensions */,
+				9F5B5AE51B5E43DAA82D6C01 /* MultiVol Audio Driver.dext in Embed System Extensions */,
 			);
 			name = "Embed System Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		9F5B5AEB1B5E43DAA82D6C01 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
+		A0F8A978441F6025EFB1DA7C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
 			files = (
-				9F5B5AE91B5E43DAA82D6C01 /* AudioDriverKit.framework in Frameworks */,
-				9F5B5AEA1B5E43DAA82D6C01 /* DriverKit.framework in Frameworks */,
+				548EF562BBE129DE667BE7EB /* MultiVol macOS Widget.appex in Embed Foundation Extensions */,
 			);
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXFrameworksBuildPhase section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0AC9897964ADABB7553CD47E /* MacOSProcessTapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSProcessTapController.swift; sourceTree = "<group>"; };
@@ -196,18 +184,18 @@
 		1973451C693BF9D8A89F6366 /* MultiVoliOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVoliOSApp.swift; sourceTree = "<group>"; };
 		208E8C901B93B03EF63FF093 /* MultiVolOwnedOutputIPC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolOwnedOutputIPC.swift; sourceTree = "<group>"; };
 		20B197CA5BE9FE199E5BD683 /* AppOwnedAudioMixer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOwnedAudioMixer.swift; sourceTree = "<group>"; };
-		2EDD2F8A2CD047A27BA11767 /* MultiVolSharedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiVolSharedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EDD2F8A2CD047A27BA11767 /* MultiVol Shared Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MultiVol Shared Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CC10E277AE1106BF58D9E07 /* AppOwnedStreamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOwnedStreamRouter.swift; sourceTree = "<group>"; };
 		40C594C2F6EEC673296407F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		531E8C1D9AE97C14F5D644DF /* MacOSDedicatedOutputRouteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSDedicatedOutputRouteManager.swift; sourceTree = "<group>"; };
 		58C7E11AA829A1AC8F737EEB /* MultiVolWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolWidgets.swift; sourceTree = "<group>"; };
 		5A57241DE39BEA58A3C20E51 /* MultiVolAudioDriver.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiVolAudioDriver.cpp; sourceTree = "<group>"; };
-		5A68EF5F809FAF4DCEC3FC88 /* MultiVolAudioDriverExtension.dext */ = {isa = PBXFileReference; explicitFileType = "wrapper.driver-extension"; includeInIndex = 0; path = MultiVolAudioDriverExtension.dext; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A68EF5F809FAF4DCEC3FC88 /* MultiVol Audio Driver.dext */ = {isa = PBXFileReference; explicitFileType = "wrapper.driver-extension"; includeInIndex = 0; path = "MultiVol Audio Driver.dext"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6667CF522D33B6AC2E0CBB9C /* MultiVolAudioUserClient.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = MultiVolAudioUserClient.iig; sourceTree = "<group>"; };
 		6883118EEFCF5E64450088F8 /* MockVolumeControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVolumeControlService.swift; sourceTree = "<group>"; };
 		6C5399D41D3B424BC687B045 /* AdjustVolumeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustVolumeIntent.swift; sourceTree = "<group>"; };
 		6FE041AE5B6F5CF7F12B5945 /* AppOwnedMixerBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppOwnedMixerBootstrap.swift; sourceTree = "<group>"; };
-		8672387A709247AF81C9B0B1 /* MultiVolMacWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MultiVolMacWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8672387A709247AF81C9B0B1 /* MultiVol macOS Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MultiVol macOS Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87378CA9A23DA51B79E37170 /* MultiVolAudioDriver.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = MultiVolAudioDriver.iig; sourceTree = "<group>"; };
 		8902C86EDD06DE925FA9B3BB /* MultiVolOwnedOutputRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolOwnedOutputRoute.swift; sourceTree = "<group>"; };
 		8B74E419186F706F63B01D11 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -220,7 +208,7 @@
 		AD25CCB8415018BF847DE4B1 /* IOSVolumeControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSVolumeControlService.swift; sourceTree = "<group>"; };
 		B01A2FFB11480946E4D1862B /* VolumeControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControlService.swift; sourceTree = "<group>"; };
 		B66A0269AF1C3DF3FF2E1EF1 /* MultiVolAudioDevice.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = MultiVolAudioDevice.iig; sourceTree = "<group>"; };
-		B9A4D0B8F26468056B1507BB /* MultiVolMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiVolMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9A4D0B8F26468056B1507BB /* MultiVol macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MultiVol macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB678F6955B44258FE3B23FE /* MultiVolAudioStream.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = MultiVolAudioStream.iig; sourceTree = "<group>"; };
 		BC14063E1032B0E187306CD9 /* VolumeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeStoreTests.swift; sourceTree = "<group>"; };
 		C24B0F93163106B2DE84EE16 /* MultiVolMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolMacApp.swift; sourceTree = "<group>"; };
@@ -233,10 +221,22 @@
 		E730B3C728C9063D45630C1E /* MultiVolAudioDriverBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiVolAudioDriverBridge.swift; sourceTree = "<group>"; };
 		E8386807A34E6B3747EFA5D1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		EC237C820CCACE854B239C27 /* VolumeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeStore.swift; sourceTree = "<group>"; };
-		EEFE95509BEB6956DEED3B8C /* MultiVoliOSWidgetsExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = MultiVoliOSWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		F30B01F32FB7261E92C5D5D8 /* MultiVoliOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MultiVoliOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEFE95509BEB6956DEED3B8C /* MultiVol iOS Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "MultiVol iOS Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30B01F32FB7261E92C5D5D8 /* MultiVol iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MultiVol iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C48424CA02D7C72FD78F34 /* MultiVolAudioUserClient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MultiVolAudioUserClient.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F5B5AEB1B5E43DAA82D6C01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F5B5AE91B5E43DAA82D6C01 /* AudioDriverKit.framework in Frameworks */,
+				9F5B5AEA1B5E43DAA82D6C01 /* DriverKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		04E3C741D6963EFC51439A90 /* MultiVoliOS */ = {
@@ -268,6 +268,7 @@
 				744A8A0EDE8D64C100E12300 /* MultiVolWidgets */,
 				8D7BCDD5DD722824B41C687B /* Sources */,
 				862EE0F27ABCEE27262CEAE3 /* Products */,
+				7E7C25932F969C4A000E088E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,15 +293,24 @@
 			path = MultiVolWidgets;
 			sourceTree = "<group>";
 		};
+		7E7C25932F969C4A000E088E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				9F5B5AEC1B5E43DAA82D6C01 /* AudioDriverKit.framework */,
+				9F5B5AED1B5E43DAA82D6C01 /* DriverKit.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		862EE0F27ABCEE27262CEAE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A68EF5F809FAF4DCEC3FC88 /* MultiVolAudioDriverExtension.dext */,
-				F30B01F32FB7261E92C5D5D8 /* MultiVoliOS.app */,
-				EEFE95509BEB6956DEED3B8C /* MultiVoliOSWidgetsExtension.appex */,
-				B9A4D0B8F26468056B1507BB /* MultiVolMac.app */,
-				8672387A709247AF81C9B0B1 /* MultiVolMacWidgetsExtension.appex */,
-				2EDD2F8A2CD047A27BA11767 /* MultiVolSharedTests.xctest */,
+				5A68EF5F809FAF4DCEC3FC88 /* MultiVol Audio Driver.dext */,
+				F30B01F32FB7261E92C5D5D8 /* MultiVol iOS.app */,
+				EEFE95509BEB6956DEED3B8C /* MultiVol iOS Widget.appex */,
+				B9A4D0B8F26468056B1507BB /* MultiVol macOS.app */,
+				8672387A709247AF81C9B0B1 /* MultiVol macOS Widget.appex */,
+				2EDD2F8A2CD047A27BA11767 /* MultiVol Shared Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,20 +373,18 @@
 			buildPhases = (
 				F5DAFA16EB86D66D1017CD5E /* Sources */,
 				A0F8A978441F6025EFB1DA7C /* Embed Foundation Extensions */,
-				9F5B5AE71B5E43DAA82D6C01 /* Embed System Extensions */,
 				9F5B5AEE1B5E43DAA82D6C01 /* Pre-Sign Xattr Scrub */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				6A0A96ECEF3C835E77A8C00E /* PBXTargetDependency */,
-				9F5B5AE81B5E43DAA82D6C01 /* PBXTargetDependency */,
 			);
 			name = MultiVolMac;
 			packageProductDependencies = (
 			);
 			productName = MultiVolMac;
-			productReference = B9A4D0B8F26468056B1507BB /* MultiVolMac.app */;
+			productReference = B9A4D0B8F26468056B1507BB /* MultiVol macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		4F34D78858578C7CB2B88F9B /* MultiVolMacWidgetsExtension */ = {
@@ -394,7 +402,7 @@
 			packageProductDependencies = (
 			);
 			productName = MultiVolMacWidgetsExtension;
-			productReference = 8672387A709247AF81C9B0B1 /* MultiVolMacWidgetsExtension.appex */;
+			productReference = 8672387A709247AF81C9B0B1 /* MultiVol macOS Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		6D11B0C31DFDAB9CB372CA7E /* MultiVoliOSWidgetsExtension */ = {
@@ -411,7 +419,7 @@
 			packageProductDependencies = (
 			);
 			productName = MultiVoliOSWidgetsExtension;
-			productReference = EEFE95509BEB6956DEED3B8C /* MultiVoliOSWidgetsExtension.appex */;
+			productReference = EEFE95509BEB6956DEED3B8C /* MultiVol iOS Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		707F4F35F5B198F53D48FD95 /* MultiVoliOS */ = {
@@ -430,7 +438,7 @@
 			packageProductDependencies = (
 			);
 			productName = MultiVoliOS;
-			productReference = F30B01F32FB7261E92C5D5D8 /* MultiVoliOS.app */;
+			productReference = F30B01F32FB7261E92C5D5D8 /* MultiVol iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		81ED8F07B54F8570A5DF87B1 /* MultiVolSharedTests */ = {
@@ -447,7 +455,7 @@
 			packageProductDependencies = (
 			);
 			productName = MultiVolSharedTests;
-			productReference = 2EDD2F8A2CD047A27BA11767 /* MultiVolSharedTests.xctest */;
+			productReference = 2EDD2F8A2CD047A27BA11767 /* MultiVol Shared Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B315A65A253EFEF8747B997C /* MultiVolAudioDriverExtension */ = {
@@ -465,7 +473,7 @@
 			packageProductDependencies = (
 			);
 			productName = MultiVolAudioDriverExtension;
-			productReference = 5A68EF5F809FAF4DCEC3FC88 /* MultiVolAudioDriverExtension.dext */;
+			productReference = 5A68EF5F809FAF4DCEC3FC88 /* MultiVol Audio Driver.dext */;
 			productType = "com.apple.product-type.driver-extension";
 		};
 /* End PBXNativeTarget section */
@@ -498,7 +506,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					B315A65A253EFEF8747B997C = {
-						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -741,6 +748,7 @@
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGN_ENTITLEMENTS = MultiVolDriverKit/Entitlements.plist;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V9SQD8LP4V;
 				DRIVERKIT_DEPLOYMENT_TARGET = 24.0;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MultiVolDriverKit/Info.plist;
@@ -870,6 +878,7 @@
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGN_ENTITLEMENTS = MultiVolDriverKit/Entitlements.plist;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = V9SQD8LP4V;
 				DRIVERKIT_DEPLOYMENT_TARGET = 24.0;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MultiVolDriverKit/Info.plist;
