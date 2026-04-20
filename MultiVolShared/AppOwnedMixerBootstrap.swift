@@ -22,6 +22,8 @@ public actor AppOwnedMixerBootstrap {
             "music-loop.mp3"
         ]) {
             try? await AppOwnedAudioMixer.shared.attachLoopingAudioFile(at: musicURL, to: "owned.music")
+        } else {
+            await AppOwnedAudioMixer.shared.attachBuiltInTestTone(to: "owned.music")
         }
 
         if let fxURL = Self.findBundledAudioURL(candidates: [

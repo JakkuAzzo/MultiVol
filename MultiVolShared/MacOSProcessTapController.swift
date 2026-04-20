@@ -47,6 +47,10 @@ public actor MacOSProcessTapController {
         runtime.topologyStatus().statusDescription
     }
 
+    public func isLiveMixingActive() -> Bool {
+        runtime.topologyStatus().canActivateLiveMixing
+    }
+
     private func reconcileRecords(with discovered: [AppAudioSession]) {
         guard let outputContext = defaultOutputContext() else {
             runtime.configure(outputContext: nil)

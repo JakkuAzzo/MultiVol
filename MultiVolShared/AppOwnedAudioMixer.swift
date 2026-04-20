@@ -2,6 +2,7 @@ import Foundation
 
 #if canImport(AVFAudio)
 import AVFAudio
+import Darwin
 
 public struct AppOwnedMixerBus: Sendable {
     public let id: String
@@ -99,6 +100,39 @@ public actor AppOwnedAudioMixer {
         filePlayers[busID] = player
     }
 
+    public func attachBuiltInTestTone(
+        to busID: String,
+        frequency: Float = 440,
+        amplitude: Float = 0.2,
+        duration: TimeInterval = 2.0
+    ) {
+        guard let busMixer = busMixers[busID] else { return }
+
+        if let existing = filePlayers[busID] {
+            existing.stop()
+            engine.detach(existing)
+            filePlayers[busID] = nil
+        }
+
+        guard let format = AVAudioFormat(standardFormatWithSampleRate: 48_000, channels: 2),
+              let buffer = Self.makeSineBuffer(
+                format: format,
+                frequency: frequency,
+                amplitude: amplitude,
+                duration: duration
+              )
+        else {
+            return
+        }
+
+        let player = AVAudioPlayerNode()
+        engine.attach(player)
+        engine.connect(player, to: busMixer, format: format)
+        player.scheduleBuffer(buffer, at: nil, options: [.loops], completionHandler: nil)
+        player.play()
+        filePlayers[busID] = player
+    }
+
     public func attachPlayerNode(
         _ player: AVAudioPlayerNode,
         format: AVAudioFormat?,
@@ -144,6 +178,39 @@ public actor AppOwnedAudioMixer {
             try file.read(into: buffer)
         } catch {
             return nil
+        }
+
+        return buffer
+    }
+
+    private static func makeSineBuffer(
+        format: AVAudioFormat,
+        frequency: Float,
+        amplitude: Float,
+        duration: TimeInterval
+    ) -> AVAudioPCMBuffer? {
+        let sampleRate = Float(format.sampleRate)
+        let safeDuration = max(0.2, duration)
+        let frames = AVAudioFrameCount(sampleRate * Float(safeDuration))
+        guard let buffer = AVAudioPCMBuffer(pcmFormat: format, frameCapacity: frames) else {
+            return nil
+        }
+
+        buffer.frameLength = frames
+
+        guard let channels = buffer.floatChannelData else {
+            return nil
+        }
+
+        let gain = max(0, min(1, amplitude))
+        let omega = 2.0 * Float.pi * frequency / sampleRate
+        let channelCount = Int(format.channelCount)
+
+        for frame in 0..<Int(frames) {
+            let sample = sinf(omega * Float(frame)) * gain
+            for channel in 0..<channelCount {
+                channels[channel][frame] = sample
+            }
         }
 
         return buffer

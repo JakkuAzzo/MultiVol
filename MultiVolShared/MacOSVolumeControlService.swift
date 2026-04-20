@@ -4,6 +4,9 @@ import Foundation
 
 public actor MacOSVolumeControlService: VolumeControlService {
     private let store: VolumeStore
+    private let ownedBuses: [AudioSource] = AppOwnedAudioMixer.defaultBuses.map {
+        AudioSource(id: $0.id, displayName: $0.displayName, kind: $0.kind)
+    }
 
     public init(store: VolumeStore = .shared) {
         self.store = store
@@ -14,11 +17,15 @@ public actor MacOSVolumeControlService: VolumeControlService {
             .init(id: "system-output", displayName: "System Output", kind: .systemOutput),
             .init(id: "mic-input", displayName: "Microphone", kind: .microphoneInput)
         ]
+
+        await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
         let sessions = await MacOSProcessTapController.shared.refreshSessions(store: store)
-        let appSources = sessions.map {
+        let canLiveMixApps = await MacOSProcessTapController.shared.isLiveMixingActive()
+        let appSources = canLiveMixApps ? sessions.map {
             AudioSource(id: $0.id, displayName: $0.displayName, kind: .application)
-        }
-        return base + appSources
+        } : []
+
+        return base + ownedBuses + appSources
     }
 
     public func currentVolume(for sourceID: String) async -> Float {
@@ -28,8 +35,24 @@ public actor MacOSVolumeControlService: VolumeControlService {
         case "mic-input":
             return readDefaultInputVolume() ?? 0.5
         default:
+            if sourceID.hasPrefix("owned.") {
+                await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
+
+                if let live = await AppOwnedAudioMixer.shared.currentVolume(for: sourceID) {
+                    return live
+                }
+            }
+
             let map = await store.loadMap()
-            return map[sourceID] ?? 1
+            if let persisted = map[sourceID] {
+                return persisted
+            }
+
+            if let bus = AppOwnedAudioMixer.defaultBuses.first(where: { $0.id == sourceID }) {
+                return bus.defaultVolume
+            }
+
+            return 1
         }
     }
 
@@ -39,6 +62,10 @@ public actor MacOSVolumeControlService: VolumeControlService {
             writeDefaultOutputVolume(bounded)
         } else if sourceID == "mic-input" {
             writeDefaultInputVolume(bounded)
+        } else if sourceID.hasPrefix("owned.") {
+            await store.upsert(bounded, for: sourceID)
+            await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
+            await AppOwnedAudioMixer.shared.setVolume(bounded, for: sourceID)
         } else {
             await store.upsert(bounded, for: sourceID)
             await MacOSProcessTapController.shared.setVolume(bounded, for: sourceID)

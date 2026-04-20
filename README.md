@@ -57,6 +57,7 @@ Use these source IDs from your app playback/call stacks to control per-source mi
 
 - `AppOwnedMixerBootstrap` initializes routing on app launch.
 - Microphone input is not auto-routed by default (to avoid interfering with device output routing).
+- If no bundled `music-loop.*` file is found, MultiVol now auto-generates a built-in looping test tone and routes it to `owned.music` so Music Bus volume can be verified immediately.
 - If present in the app bundle, the following files are auto-routed:
    - `music-loop.m4a` / `music-loop.wav` / `music-loop.mp3` -> `owned.music`
    - `fx-loop.m4a` / `fx-loop.wav` / `fx-loop.mp3` -> `owned.fx`
