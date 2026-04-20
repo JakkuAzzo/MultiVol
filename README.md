@@ -17,6 +17,7 @@ MultiVol is a Swift dual-platform app + widget project for controlling and monit
    - Real control for system output volume and microphone input volume via CoreAudio.
    - Real app-owned mixer buses (Music Bus, Call Bus, Effects Bus) powered by AVAudioEngine player nodes with independent per-source volume.
    - App-owned bus levels are persisted and shared across app and widget surfaces.
+   - When a known external call app (for example WhatsApp/FaceTime) is active, the `Call Bus` slider also bridges to system output volume so live calls are affected.
 - iOS:
    - True app-owned mixer buses (Music Bus, Call Bus, Effects Bus) powered by AVAudioEngine with per-source controls.
    - Shared, persistent app-group-backed source levels used by app, widget, and intents.
@@ -48,12 +49,13 @@ Use these source IDs from your app playback/call stacks to control per-source mi
 ### Default bootstrap behavior
 
 - `AppOwnedMixerBootstrap` initializes routing on app launch.
-- Microphone input is routed to `owned.call` (after iOS mic permission is granted).
+- Microphone input is not auto-routed by default (to avoid interfering with device output routing).
 - If present in the app bundle, the following files are auto-routed:
    - `music-loop.m4a` / `music-loop.wav` / `music-loop.mp3` -> `owned.music`
    - `fx-loop.m4a` / `fx-loop.wav` / `fx-loop.mp3` -> `owned.fx`
 
 To wire your production streams, call `attachPlayerNode(_:format:to:)` with your own media/call players.
+To enable call capture routing, call `connectMicrophoneToCallBus()` explicitly.
 
 ### One-call production integration
 

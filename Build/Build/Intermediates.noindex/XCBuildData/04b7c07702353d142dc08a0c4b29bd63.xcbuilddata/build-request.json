@@ -1,0 +1,70 @@
+{
+  "buildCommand" : {
+    "command" : "build",
+    "skipDependencies" : false,
+    "style" : "buildOnly"
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "8cf363abd006bb17a30f966a06419037e48a8e6a99b2b47fa8402f5e4d1b2264"
+    },
+    {
+      "guid" : "8cf363abd006bb17a30f966a06419037e9bfc34b83299d6450e714c425bf7780"
+    }
+  ],
+  "containerPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVol.xcodeproj",
+  "continueBuildingAfterErrors" : false,
+  "dependencyScope" : "workspace",
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "hostTargetedPlatform" : null,
+      "platform" : "macosx",
+      "sdk" : "macosx26.4",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "arm64e",
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Products",
+      "derivedDataPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build",
+      "indexDataStoreFolderPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Index.noindex/PrecompiledHeaders",
+      "pchPath" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "commandLine" : {
+        "table" : {
+          "CODE_SIGNING_ALLOWED" : "NO",
+          "CODE_SIGNING_REQUIRED" : "NO"
+        }
+      },
+      "synthesized" : {
+        "table" : {
+          "ACTION" : "build",
+          "COLOR_DIAGNOSTICS" : "YES",
+          "diagnostic_message_length" : "80",
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "YES"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

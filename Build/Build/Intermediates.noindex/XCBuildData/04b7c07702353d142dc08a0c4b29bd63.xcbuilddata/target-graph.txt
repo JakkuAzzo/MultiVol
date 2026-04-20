@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'MultiVolMac' in project 'MultiVol'
+➜ Explicit dependency on target 'MultiVolMacWidgetsExtension' in project 'MultiVol'
+Target 'MultiVolMacWidgetsExtension' in project 'MultiVol' (no dependencies)

@@ -15,12 +15,6 @@ public actor AppOwnedMixerBootstrap {
 
         await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
 
-        // Route live capture to the call bus when the platform permits it.
-        #if os(iOS)
-        await requestRecordPermissionIfNeeded()
-        #endif
-        await AppOwnedAudioMixer.shared.attachMicrophoneInput(to: "owned.call")
-
         // Route app-owned media/effects assets if bundled by the host app.
         if let musicURL = Self.findBundledAudioURL(candidates: [
             "music-loop.m4a",
@@ -40,26 +34,6 @@ public actor AppOwnedMixerBootstrap {
 
         didConfigure = true
     }
-
-    #if os(iOS)
-    private func requestRecordPermissionIfNeeded() async {
-        let session = AVAudioSession.sharedInstance()
-        switch session.recordPermission {
-        case .granted:
-            return
-        case .denied:
-            return
-        case .undetermined:
-            _ = await withCheckedContinuation { continuation in
-                session.requestRecordPermission { granted in
-                    continuation.resume(returning: granted)
-                }
-            }
-        @unknown default:
-            return
-        }
-    }
-    #endif
 
     private static func findBundledAudioURL(candidates: [String]) -> URL? {
         for filename in candidates {

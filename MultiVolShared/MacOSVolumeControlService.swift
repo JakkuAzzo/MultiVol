@@ -1,8 +1,15 @@
 #if os(macOS)
+import AppKit
 import CoreAudio
 import Foundation
 
 public actor MacOSVolumeControlService: VolumeControlService {
+    private static let externalCallAppBundleIDs: Set<String> = [
+        "net.whatsapp.WhatsApp",
+        "com.whatsapp.WhatsApp",
+        "com.apple.FaceTime"
+    ]
+
     private let store: VolumeStore
 
     public init(store: VolumeStore = .shared) {
@@ -36,6 +43,10 @@ public actor MacOSVolumeControlService: VolumeControlService {
         case "mic-input":
             return readDefaultInputVolume() ?? 0.5
         default:
+            if sourceID == "owned.call", isExternalCallAppActive() {
+                return readDefaultOutputVolume() ?? 0.5
+            }
+
             await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
 
             if let live = await AppOwnedAudioMixer.shared.currentVolume(for: sourceID) {
@@ -65,7 +76,18 @@ public actor MacOSVolumeControlService: VolumeControlService {
             await store.upsert(bounded, for: sourceID)
             await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
             await AppOwnedAudioMixer.shared.setVolume(bounded, for: sourceID)
+
+            if sourceID == "owned.call", isExternalCallAppActive() {
+                // Public macOS APIs do not expose true per-app volume control.
+                // When a known call app is active, bridge call bus to output volume so calls respond.
+                writeDefaultOutputVolume(bounded)
+            }
         }
+    }
+
+    private func isExternalCallAppActive() -> Bool {
+        let runningIDs = Set(NSWorkspace.shared.runningApplications.compactMap(\ .bundleIdentifier))
+        return !Self.externalCallAppBundleIDs.isDisjoint(with: runningIDs)
     }
 
     private func defaultOutputDeviceID() -> AudioDeviceID? {

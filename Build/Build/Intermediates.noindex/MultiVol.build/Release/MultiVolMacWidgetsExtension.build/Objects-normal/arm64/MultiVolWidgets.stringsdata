@@ -1,0 +1,32 @@
+{
+  "source": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/MultiVolWidgets.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%lld%%",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 22
+        }
+      },
+      {
+        "comment": "",
+        "key": "MultiVol",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 47
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monitor active source levels in a compact control panel widget.",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 48
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,40 @@
+{
+  "source": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Audio Source",
+        "location": {
+          "startingColumn": 71,
+          "startingLine": 6
+        }
+      },
+      {
+        "comment": "",
+        "key": "Adjust Source Volume",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 44
+        }
+      },
+      {
+        "comment": "",
+        "key": "Source",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 46
+        }
+      },
+      {
+        "comment": "",
+        "key": "Increase",
+        "location": {
+          "startingColumn": 23,
+          "startingLine": 49
+        }
+      }
+    ]
+  },
+  "version": 1
+}

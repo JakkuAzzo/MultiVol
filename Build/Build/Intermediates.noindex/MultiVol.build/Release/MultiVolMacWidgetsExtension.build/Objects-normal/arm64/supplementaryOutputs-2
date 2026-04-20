@@ -1,0 +1,12 @@
+{
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift" : {
+    "abi-baseline-json" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVol_macOS_Widget.abi.json",
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVolMacWidgetsExtension-primary.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVolMacWidgetsExtension-primary.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVolMacWidgetsExtension-primary.dia",
+    "objc-header" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVol_macOS_Widget-Swift.h",
+    "swiftdoc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVol_macOS_Widget.swiftdoc",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVol_macOS_Widget.swiftmodule",
+    "swiftsourceinfo" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMacWidgetsExtension.build/Objects-normal/arm64/MultiVol_macOS_Widget.swiftsourceinfo"
+  }
+}

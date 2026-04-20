@@ -1,0 +1,554 @@
+[
+  {
+    "typeName": "MultiVol_macOS_Widget.VolumeSourceEntity",
+    "mangledTypeName": "21MultiVol_macOS_Widget18VolumeSourceEntityV",
+    "kind": "struct",
+    "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+    "line": 5,
+    "conformances": [
+      "AppIntents.AppEntity",
+      "AppIntents.AppValue",
+      "AppIntents.DisplayRepresentable",
+      "Swift.Identifiable",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents.TypeDisplayRepresentable",
+      "AppIntents._IntentValue",
+      "Swift.Sendable",
+      "AppIntents.InstanceDisplayRepresentable",
+      "Swift.SendableMetatype",
+      "Foundation.CustomLocalizedStringResourceConvertible"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppEntity",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.AppValue",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.DisplayRepresentable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.Identifiable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.TypeDisplayRepresentable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents._IntentValue",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.InstanceDisplayRepresentable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.SendableMetatype",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Foundation.CustomLocalizedStringResourceConvertible",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "DefaultQuery",
+        "substitutedTypeName": "MultiVol_macOS_Widget.VolumeSourceEntityQuery",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget23VolumeSourceEntityQueryV"
+      },
+      {
+        "typeAliasName": "ID",
+        "substitutedTypeName": "Swift.String",
+        "substitutedMangledTypeName": "SS"
+      },
+      {
+        "typeAliasName": "ValueType",
+        "substitutedTypeName": "MultiVol_macOS_Widget.VolumeSourceEntity",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget18VolumeSourceEntityV"
+      },
+      {
+        "typeAliasName": "UnwrappedType",
+        "substitutedTypeName": "MultiVol_macOS_Widget.VolumeSourceEntity",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget18VolumeSourceEntityV"
+      },
+      {
+        "typeAliasName": "Specification",
+        "substitutedTypeName": "AppIntents.EmptyResolverSpecification<MultiVol_macOS_Widget.VolumeSourceEntity>",
+        "substitutedMangledTypeName": "10AppIntents26EmptyResolverSpecificationVy21MultiVol_macOS_Widget18VolumeSourceEntityVG"
+      }
+    ],
+    "properties": [
+      {
+        "label": "id",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 9,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "name",
+        "type": "Swift.String",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 10,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "typeDisplayRepresentation",
+        "type": "AppIntents.TypeDisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 6,
+        "valueKind": "RawLiteral",
+        "value": "Audio Source"
+      },
+      {
+        "label": "defaultQuery",
+        "type": "MultiVol_macOS_Widget.VolumeSourceEntityQuery",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 7,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "MultiVol_macOS_Widget.VolumeSourceEntityQuery",
+          "arguments": []
+        }
+      },
+      {
+        "label": "displayRepresentation",
+        "type": "AppIntents.DisplayRepresentation",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 12,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.DisplayRepresentation",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "InitCall",
+              "value": {
+                "type": "Foundation.LocalizedStringResource",
+                "arguments": [
+                  {
+                    "label": "stringLiteral",
+                    "type": "Swift.String",
+                    "valueKind": "Runtime"
+                  }
+                ]
+              }
+            },
+            {
+              "label": "subtitle",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "image",
+              "type": "Swift.Optional<AppIntents.DisplayRepresentation.Image>",
+              "valueKind": "NilLiteral"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "typeName": "MultiVol_macOS_Widget.VolumeSourceEntityQuery",
+    "mangledTypeName": "21MultiVol_macOS_Widget23VolumeSourceEntityQueryV",
+    "kind": "struct",
+    "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+    "line": 17,
+    "conformances": [
+      "AppIntents.EntityQuery",
+      "AppIntents.DynamicOptionsProvider",
+      "AppIntents.PersistentlyIdentifiable",
+      "Swift.Sendable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.SendableMetatype",
+      "Swift.BitwiseCopyable"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.EntityQuery",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.DynamicOptionsProvider",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.SendableMetatype",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.BitwiseCopyable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "Entity",
+        "substitutedTypeName": "MultiVol_macOS_Widget.VolumeSourceEntity",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget18VolumeSourceEntityV"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<MultiVol_macOS_Widget.VolumeSourceEntity>",
+        "substitutedMangledTypeName": "Say21MultiVol_macOS_Widget18VolumeSourceEntityVG"
+      },
+      {
+        "typeAliasName": "Result",
+        "substitutedTypeName": "Swift.Array<MultiVol_macOS_Widget.VolumeSourceEntity>",
+        "substitutedMangledTypeName": "Say21MultiVol_macOS_Widget18VolumeSourceEntityVG"
+      },
+      {
+        "typeAliasName": "DefaultValue",
+        "substitutedTypeName": "MultiVol_macOS_Widget.VolumeSourceEntity",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget18VolumeSourceEntityV"
+      }
+    ],
+    "properties": []
+  },
+  {
+    "typeName": "MultiVol_macOS_Widget.AdjustVolumeIntent",
+    "mangledTypeName": "21MultiVol_macOS_Widget18AdjustVolumeIntentV",
+    "kind": "struct",
+    "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+    "line": 43,
+    "conformances": [
+      "AppIntents.AppIntent",
+      "AppIntents.PersistentlyIdentifiable",
+      "AppIntents._SupportsAppDependencies",
+      "Swift.Sendable",
+      "Swift.SendableMetatype"
+    ],
+    "allConformances": [
+      {
+        "protocolName": "AppIntents.AppIntent",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents.PersistentlyIdentifiable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "AppIntents._SupportsAppDependencies",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.Sendable",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      },
+      {
+        "protocolName": "Swift.SendableMetatype",
+        "conformanceDefiningModule": "MultiVol_macOS_Widget"
+      }
+    ],
+    "associatedTypeAliases": [
+      {
+        "typeAliasName": "PerformResult",
+        "substitutedTypeName": "some AppIntents.IntentResult",
+        "substitutedMangledTypeName": "21MultiVol_macOS_Widget18AdjustVolumeIntentV7performQryYaKFQOy_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.IntentResult"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      },
+      {
+        "typeAliasName": "SummaryContent",
+        "substitutedTypeName": "some AppIntents.ParameterSummary",
+        "substitutedMangledTypeName": "10AppIntents0A6IntentPAAE16parameterSummaryQrvpZQOy21MultiVol_macOS_Widget012AdjustVolumeC0V_Qo_",
+        "opaqueTypeProtocolRequirements": [
+          "AppIntents.ParameterSummary"
+        ],
+        "opaqueTypeSameTypeRequirements": []
+      }
+    ],
+    "properties": [
+      {
+        "label": "_source",
+        "type": "AppIntents.IntentParameter<MultiVol_macOS_Widget.VolumeSourceEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 47,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<MultiVol_macOS_Widget.VolumeSourceEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Source"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<MultiVol_macOS_Widget.VolumeSourceEntity>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        }
+      },
+      {
+        "label": "_increase",
+        "type": "AppIntents.IntentParameter<Swift.Bool>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 50,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<Swift.Bool>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Increase"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<Swift.Bool>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "displayName",
+              "type": "Swift.Optional<Swift.Bool.IntentDisplayName>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        }
+      },
+      {
+        "label": "title",
+        "type": "Foundation.LocalizedStringResource",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "true",
+        "isComputed": "false",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 44,
+        "valueKind": "RawLiteral",
+        "value": "Adjust Source Volume"
+      },
+      {
+        "label": "source",
+        "type": "MultiVol_macOS_Widget.VolumeSourceEntity",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 47,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<MultiVol_macOS_Widget.VolumeSourceEntity>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Source"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<MultiVol_macOS_Widget.VolumeSourceEntity>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestDisambiguationDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        },
+        "propertyWrappers": [
+          {
+            "type": "AppIntents.IntentParameter",
+            "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+            "line": 46,
+            "arguments": [
+              {
+                "label": "title",
+                "type": "Foundation.LocalizedStringResource",
+                "valueKind": "RawLiteral",
+                "value": "Source"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "$source",
+        "type": "AppIntents.IntentParameter<MultiVol_macOS_Widget.VolumeSourceEntity>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 47,
+        "valueKind": "Runtime"
+      },
+      {
+        "label": "increase",
+        "type": "Swift.Bool",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 50,
+        "valueKind": "InitCall",
+        "value": {
+          "type": "AppIntents.IntentParameter<Swift.Bool>",
+          "arguments": [
+            {
+              "label": "title",
+              "type": "Foundation.LocalizedStringResource",
+              "valueKind": "RawLiteral",
+              "value": "Increase"
+            },
+            {
+              "label": "description",
+              "type": "Swift.Optional<Foundation.LocalizedStringResource>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "default",
+              "type": "Swift.Optional<Swift.Bool>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "displayName",
+              "type": "Swift.Optional<Swift.Bool.IntentDisplayName>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "requestValueDialog",
+              "type": "Swift.Optional<AppIntents.IntentDialog>",
+              "valueKind": "NilLiteral"
+            },
+            {
+              "label": "inputConnectionBehavior",
+              "type": "AppIntents.InputConnectionBehavior",
+              "valueKind": "Runtime"
+            }
+          ]
+        },
+        "propertyWrappers": [
+          {
+            "type": "AppIntents.IntentParameter",
+            "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+            "line": 49,
+            "arguments": [
+              {
+                "label": "title",
+                "type": "Foundation.LocalizedStringResource",
+                "valueKind": "RawLiteral",
+                "value": "Increase"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "$increase",
+        "type": "AppIntents.IntentParameter<Swift.Bool>",
+        "mangledTypeName": "n/a - deprecated",
+        "isStatic": "false",
+        "isComputed": "true",
+        "file": "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift",
+        "line": 50,
+        "valueKind": "Runtime"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AppOwnedAudioMixer.swift" : {
+    "abi-baseline-json" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVol_macOS.abi.json",
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVolMac-primary.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVolMac-primary.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVolMac-primary.dia",
+    "objc-header" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVol_macOS-Swift.h",
+    "swiftdoc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVol_macOS.swiftdoc",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVol_macOS.swiftmodule",
+    "swiftsourceinfo" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/Build/Build/Intermediates.noindex/MultiVol.build/Release/MultiVolMac.build/Objects-normal/x86_64/MultiVol_macOS.swiftsourceinfo"
+  }
+}

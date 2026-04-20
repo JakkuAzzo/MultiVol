@@ -40,7 +40,7 @@ public actor AppOwnedAudioMixer {
 
         #if os(iOS)
         let session = AVAudioSession.sharedInstance()
-        try? session.setCategory(.playAndRecord, mode: .default, options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
+        try? session.setCategory(.playback, mode: .default, options: [.mixWithOthers])
         try? session.setActive(true)
         #endif
 
@@ -60,8 +60,6 @@ public actor AppOwnedAudioMixer {
             busMixers[bus.id]?.outputVolume = persisted[bus.id] ?? bus.defaultVolume
         }
 
-        await attachDefaultCallRouteIfAvailable()
-
         configured = true
     }
 
@@ -71,6 +69,8 @@ public actor AppOwnedAudioMixer {
         #if os(iOS)
         let session = AVAudioSession.sharedInstance()
         guard session.recordPermission == .granted else { return }
+        try? session.setCategory(.playAndRecord, mode: .default, options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth])
+        try? session.setActive(true)
         #endif
 
         let inputNode = engine.inputNode
@@ -132,17 +132,6 @@ public actor AppOwnedAudioMixer {
 
     public func currentVolume(for busID: String) -> Float? {
         busMixers[busID]?.outputVolume
-    }
-
-    private func attachDefaultCallRouteIfAvailable() async {
-        #if os(iOS)
-        let session = AVAudioSession.sharedInstance()
-        if session.recordPermission == .granted {
-            attachMicrophoneInput(to: "owned.call")
-        }
-        #elseif os(macOS)
-        attachMicrophoneInput(to: "owned.call")
-        #endif
     }
 
     private static func makePCMBuffer(from file: AVAudioFile) -> AVAudioPCMBuffer? {
