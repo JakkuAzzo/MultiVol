@@ -27,7 +27,7 @@ struct MacContentView: View {
             ForEach(sources, id: \.id) { source in
                 HStack(spacing: 12) {
                     Text(source.displayName)
-                        .frame(width: 90, alignment: .leading)
+                        .frame(width: 130, alignment: .leading)
 
                     Slider(
                         value: Binding(
@@ -52,6 +52,7 @@ struct MacContentView: View {
         }
         .padding(16)
         .task {
+            await AppOwnedMixerBootstrap.shared.configureDefaults()
             await refreshSourcesAndLevels()
 
             for await _ in Timer.publish(every: 2.0, on: .main, in: .common).autoconnect().values {

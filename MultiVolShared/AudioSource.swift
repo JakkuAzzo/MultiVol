@@ -21,6 +21,9 @@ public struct AudioSource: Identifiable, Codable, Hashable, Sendable {
     public static let defaults: [AudioSource] = [
         .init(id: "system-output", displayName: "Output", kind: .systemOutput),
         .init(id: "mic-input", displayName: "Mic", kind: .microphoneInput),
+        .init(id: "owned.music", displayName: "Music Bus", kind: .media),
+        .init(id: "owned.call", displayName: "Call Bus", kind: .call),
+        .init(id: "owned.fx", displayName: "Effects Bus", kind: .media),
         .init(id: "media", displayName: "Media", kind: .media),
         .init(id: "call", displayName: "Call", kind: .call)
     ]
@@ -37,6 +40,13 @@ public extension AudioSource {
                 .replacingOccurrences(of: "app.", with: "")
                 .replacingOccurrences(of: ".", with: " ")
                 .capitalized
+        }
+
+        if sourceID.hasPrefix("owned.") {
+            return sourceID
+                .replacingOccurrences(of: "owned.", with: "")
+                .replacingOccurrences(of: ".", with: " ")
+                .capitalized + " Bus"
         }
 
         return sourceID

@@ -44,8 +44,32 @@ struct IOSContentView: View {
                 }
                 .padding(.vertical, 6)
             }
-            .navigationTitle("MultiVol iOS")
+            .navigationTitle("MultiVol Control Panel")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu("Control Panel") {
+                        ForEach(sources, id: \.id) { source in
+                            Button("Raise \(source.displayName)") {
+                                Task {
+                                    let next = await service.stepVolume(by: 0.05, for: source.id)
+                                    levels[source.id] = next
+                                    WidgetCenter.shared.reloadAllTimelines()
+                                }
+                            }
+
+                            Button("Lower \(source.displayName)") {
+                                Task {
+                                    let next = await service.stepVolume(by: -0.05, for: source.id)
+                                    levels[source.id] = next
+                                    WidgetCenter.shared.reloadAllTimelines()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             .task {
+                await AppOwnedMixerBootstrap.shared.configureDefaults()
                 sources = await service.allSources()
                 for source in sources {
                     levels[source.id] = await service.currentVolume(for: source.id)
