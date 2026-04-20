@@ -5,9 +5,9 @@ struct MultiVolWidgetProvider: TimelineProvider {
     private func persistedEntry() async -> MultiVolWidgetEntry {
         let persisted = await VolumeStore.shared.load()
         let fallback = [
-            VolumeSnapshot(sourceID: "owned.music", volume: 0.5),
-            VolumeSnapshot(sourceID: "owned.call", volume: 0.6),
-            VolumeSnapshot(sourceID: "owned.fx", volume: 0.4)
+            VolumeSnapshot(sourceID: "system-output", volume: 0.5),
+            VolumeSnapshot(sourceID: "app.spotify", volume: 0.7),
+            VolumeSnapshot(sourceID: "app.zoom.us", volume: 0.6)
         ]
 
         return MultiVolWidgetEntry(date: Date(), sourceLevels: persisted.isEmpty ? fallback : persisted)
@@ -17,9 +17,9 @@ struct MultiVolWidgetProvider: TimelineProvider {
         MultiVolWidgetEntry(
             date: Date(),
             sourceLevels: [
-                .init(sourceID: "owned.music", volume: 0.5),
-                .init(sourceID: "owned.call", volume: 0.6),
-                .init(sourceID: "owned.fx", volume: 0.4)
+                .init(sourceID: "system-output", volume: 0.5),
+                .init(sourceID: "app.spotify", volume: 0.7),
+                .init(sourceID: "app.zoom.us", volume: 0.6)
             ]
         )
     }

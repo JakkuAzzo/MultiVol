@@ -15,9 +15,9 @@ MultiVol is a Swift dual-platform app + widget project for controlling and monit
 
 - macOS:
    - Real control for system output volume and microphone input volume via CoreAudio.
-   - Real app-owned mixer buses (Music Bus, Call Bus, Effects Bus) powered by AVAudioEngine player nodes with independent per-source volume.
-   - App-owned bus levels are persisted and shared across app and widget surfaces.
-   - When a known external call app (for example WhatsApp/FaceTime) is active, the `Call Bus` slider also bridges to system output volume so live calls are affected.
+   - Dynamic per-app sessions are discovered from the Core Audio process list.
+   - Per-session gain values are persisted and shared across the app and widget surfaces.
+   - The current macOS refactor centers the project on process-tap discovery, staged session ownership, and a future isolated-output topology rather than static fake buses.
 - iOS:
    - True app-owned mixer buses (Music Bus, Call Bus, Effects Bus) powered by AVAudioEngine with per-source controls.
    - Shared, persistent app-group-backed source levels used by app, widget, and intents.
@@ -27,22 +27,29 @@ MultiVol is a Swift dual-platform app + widget project for controlling and monit
 ## Control-panel UX
 
 - macOS runs as a menu-bar control panel (`MenuBarExtra`) for source sliders.
+- macOS now lists dynamic app sessions instead of static `owned.music` / `owned.call` placeholder buses.
 - iOS provides quick source actions in the navigation bar "Control Panel" menu and widget intent actions.
 - Neither platform supports replacing Apple system audio control center with third-party arbitrary per-app volume controls using public APIs.
 
+## macOS per-app architecture
+
+- `MacOSProcessTapController` enumerates active output processes using Core Audio process objects.
+- App sessions are grouped by bundle ID when possible, with PID fallback when the process has no bundle identifier.
+- `MacOSProcessTapMixerRuntime` now stages per-app session gains and output requirements without attaching callbacks to the user’s physical output device.
+- `MacOSDedicatedOutputRouteManager` discovers installed MultiVol-style output devices and tracks whether one is currently active as the default macOS output route.
+- When a dedicated MultiVol route is active, the runtime now registers that isolated route through `registerIsolatedOutputDevice(...)` so the app can distinguish a safe owned-output topology from ordinary speaker playback.
+- `MultiVolAudioDriverBridge` can now request activation of an embedded system extension with identifier `com.jakkuazzo.multivol.macos.driver`.
+- `MultiVolDriverKit/` contains the initial DriverKit scaffold, bundle identifiers, entitlements template, and device UID conventions for the future virtual output route.
+- Live per-app attenuation is intentionally blocked until MultiVol owns an isolated output route, such as a dedicated virtual output device or equivalent safe sink.
+- Persisted source IDs now follow the dynamic session model, such as `app.com.spotify.client` or `process.1234`.
+
 ## Wiring real app-owned sources
 
-`AppOwnedAudioMixer` now exposes real routing APIs for your own audio graph:
+`AppOwnedAudioMixer` remains available for host-controlled playback stacks, especially on iOS or for app-internal audio graphs:
 
 - `attachMicrophoneInput(to:)`: route capture input into a bus (for call monitor flows).
 - `attachLoopingAudioFile(at:to:)`: route a real media file into a bus.
 - `attachPlayerNode(_:format:to:)`: attach your own `AVAudioPlayerNode` for app-managed streams.
-
-Default buses:
-
-- `owned.music`
-- `owned.call`
-- `owned.fx`
 
 Use these source IDs from your app playback/call stacks to control per-source mix levels through the existing service/UI/widget pipeline.
 

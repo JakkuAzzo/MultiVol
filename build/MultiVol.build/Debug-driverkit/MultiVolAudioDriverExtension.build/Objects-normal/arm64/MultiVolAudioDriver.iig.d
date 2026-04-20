@@ -1,0 +1,3 @@
+dependencies: \
+  /Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug-driverkit/MultiVolAudioDriverExtension.build/DerivedSources/MultiVol\ Audio\ Driver/MultiVolAudioDriver.iig.cpp \
+  /Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug-driverkit/MultiVolAudioDriverExtension.build/DerivedSources/MultiVol\ Audio\ Driver/MultiVolAudioDriver.h

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.jakkuazzo.multivol.macos.driver</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>MultiVol Audio Driver</string>
+	<key>CFBundlePackageType</key>
+	<string>DEXT</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>MultiVolAudioDriver</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.jakkuazzo.multivol.macos.driver</string>
+			<key>IOClass</key>
+			<string>IOUserAudioDriver</string>
+			<key>IOUserClass</key>
+			<string>MultiVolAudioDriver</string>
+			<key>IOUserAudioDriverUserClientProperties</key>
+			<dict>
+				<key>IOClass</key>
+				<string>IOUserUserClient</string>
+				<key>IOUserClass</key>
+				<string>IOUserAudioDriverUserClient</string>
+			</dict>
+			<key>MultiVolBridgeUserClientProperties</key>
+			<dict>
+				<key>IOClass</key>
+				<string>IOUserUserClient</string>
+				<key>IOUserClass</key>
+				<string>MultiVolAudioUserClient</string>
+			</dict>
+			<key>IOUserServerName</key>
+			<string>com.jakkuazzo.multivol.macos.driver</string>
+		</dict>
+	</dict>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.system_extension.driver_extension</string>
+	</dict>
+</dict>
+</plist>

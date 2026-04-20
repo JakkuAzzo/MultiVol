@@ -1,0 +1,20 @@
+#ifndef MultiVolAudioStream_h
+#define MultiVolAudioStream_h
+
+#include <Availability.h>
+#include <AudioDriverKit/IOUserAudioStream.iig>
+
+class MultiVolAudioStream: public IOUserAudioStream
+{
+public:
+    virtual bool init(IOUserAudioDriver* in_driver,
+                      IOUserAudioStreamDirection in_direction,
+                      IOMemoryDescriptor* in_io_memory_descriptor) override;
+    virtual void free() override;
+    virtual kern_return_t StartIO(IOUserAudioStartStopFlags in_flags) override;
+    virtual kern_return_t StopIO(IOUserAudioStartStopFlags in_flags) override;
+    virtual kern_return_t HandleChangeCurrentStreamFormat(const IOUserAudioStreamBasicDescription* in_format) override;
+    virtual kern_return_t HandleChangeStreamIsActive(bool in_is_active) override;
+};
+
+#endif

@@ -1,0 +1,19 @@
+#ifndef MultiVolAudioDriver_h
+#define MultiVolAudioDriver_h
+
+#include <Availability.h>
+#include <AudioDriverKit/IOUserAudioDriver.iig>
+
+class MultiVolAudioDriver: public IOUserAudioDriver
+{
+public:
+    virtual kern_return_t Start(IOService* provider) override;
+    virtual kern_return_t Stop(IOService* provider) override;
+    virtual kern_return_t NewUserClient(uint32_t in_type, IOUserClient** out_user_client) override;
+    virtual kern_return_t StartDevice(IOUserAudioObjectID in_object_id,
+                                      IOUserAudioStartStopFlags in_flags) override;
+    virtual kern_return_t StopDevice(IOUserAudioObjectID in_object_id,
+                                     IOUserAudioStartStopFlags in_flags) override;
+};
+
+#endif

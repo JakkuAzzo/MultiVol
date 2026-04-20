@@ -1,0 +1,209 @@
+{
+  "" : {
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolMacWidgetsExtension-primary.dia",
+    "emit-module-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolMacWidgetsExtension-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolMacWidgetsExtension-primary-emit-module.dia",
+    "pch" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolMacWidgetsExtension-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolMacWidgetsExtension-primary.swiftdeps"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AppAudioSession.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppAudioSession~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AppOwnedAudioMixer.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedAudioMixer~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AppOwnedMixerBootstrap.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedMixerBootstrap~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AppOwnedStreamRouter.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AppOwnedStreamRouter~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AudioProviderAdapters.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioProviderAdapters~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/AudioSource.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AudioSource~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/IOSVolumeControlService.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/IOSVolumeControlService~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MacOSDedicatedOutputRouteManager.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSDedicatedOutputRouteManager~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MacOSProcessTapController.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapController~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MacOSProcessTapMixerRuntime.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSProcessTapMixerRuntime~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MacOSVolumeControlService.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MacOSVolumeControlService~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MockVolumeControlService.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MockVolumeControlService~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MultiVolOwnedOutputIPC.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputIPC~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/MultiVolOwnedOutputRoute.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolOwnedOutputRoute~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/VolumeControlService.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeControlService~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolShared/VolumeStore.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/VolumeStore~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/AdjustVolumeIntent.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/AdjustVolumeIntent~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/MultiVolWidgetEntry.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetEntry~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/MultiVolWidgetProvider.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgetProvider~partial.swiftmodule"
+  },
+  "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/MultiVolWidgets/MultiVolWidgets.swift" : {
+    "const-values" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.swiftconstvalues",
+    "dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.d",
+    "diagnostics" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.dia",
+    "index-unit-output-path" : "/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.o",
+    "llvm-bc" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.bc",
+    "object" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.o",
+    "swift-dependencies" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets.swiftdeps",
+    "swiftmodule" : "/Users/nathanbrown-bennett/Documents/MultiVol/MultiVol/build/MultiVol.build/Debug/MultiVolMacWidgetsExtension.build/Objects-normal/x86_64/MultiVolWidgets~partial.swiftmodule"
+  }
+}

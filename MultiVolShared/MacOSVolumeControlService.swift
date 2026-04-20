@@ -1,15 +1,8 @@
 #if os(macOS)
-import AppKit
 import CoreAudio
 import Foundation
 
 public actor MacOSVolumeControlService: VolumeControlService {
-    private static let externalCallAppBundleIDs: Set<String> = [
-        "net.whatsapp.WhatsApp",
-        "com.whatsapp.WhatsApp",
-        "com.apple.FaceTime"
-    ]
-
     private let store: VolumeStore
 
     public init(store: VolumeStore = .shared) {
@@ -17,23 +10,15 @@ public actor MacOSVolumeControlService: VolumeControlService {
     }
 
     public func allSources() async -> [AudioSource] {
-        var base: [AudioSource] = [
+        let base: [AudioSource] = [
             .init(id: "system-output", displayName: "System Output", kind: .systemOutput),
             .init(id: "mic-input", displayName: "Microphone", kind: .microphoneInput)
         ]
-
-        await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
-        let owned = AppOwnedAudioMixer.defaultBuses.map {
-            AudioSource(id: $0.id, displayName: $0.displayName, kind: $0.kind)
+        let sessions = await MacOSProcessTapController.shared.refreshSessions(store: store)
+        let appSources = sessions.map {
+            AudioSource(id: $0.id, displayName: $0.displayName, kind: .application)
         }
-
-        for source in owned {
-            if !base.contains(where: { $0.id == source.id }) {
-                base.append(source)
-            }
-        }
-
-        return base
+        return base + appSources
     }
 
     public func currentVolume(for sourceID: String) async -> Float {
@@ -43,26 +28,8 @@ public actor MacOSVolumeControlService: VolumeControlService {
         case "mic-input":
             return readDefaultInputVolume() ?? 0.5
         default:
-            if sourceID == "owned.call", isExternalCallAppActive() {
-                return readDefaultOutputVolume() ?? 0.5
-            }
-
-            await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
-
-            if let live = await AppOwnedAudioMixer.shared.currentVolume(for: sourceID) {
-                return live
-            }
-
             let map = await store.loadMap()
-            if let persisted = map[sourceID] {
-                return persisted
-            }
-
-            if let bus = AppOwnedAudioMixer.defaultBuses.first(where: { $0.id == sourceID }) {
-                return bus.defaultVolume
-            }
-
-            return 0.5
+            return map[sourceID] ?? 1
         }
     }
 
@@ -74,20 +41,33 @@ public actor MacOSVolumeControlService: VolumeControlService {
             writeDefaultInputVolume(bounded)
         } else {
             await store.upsert(bounded, for: sourceID)
-            await AppOwnedAudioMixer.shared.startIfNeeded(store: store)
-            await AppOwnedAudioMixer.shared.setVolume(bounded, for: sourceID)
-
-            if sourceID == "owned.call", isExternalCallAppActive() {
-                // Public macOS APIs do not expose true per-app volume control.
-                // When a known call app is active, bridge call bus to output volume so calls respond.
-                writeDefaultOutputVolume(bounded)
-            }
+            await MacOSProcessTapController.shared.setVolume(bounded, for: sourceID)
         }
     }
 
-    private func isExternalCallAppActive() -> Bool {
-        let runningIDs = Set(NSWorkspace.shared.runningApplications.compactMap(\ .bundleIdentifier))
-        return !Self.externalCallAppBundleIDs.isDisjoint(with: runningIDs)
+    public func appSessions() async -> [AppAudioSession] {
+        await MacOSProcessTapController.shared.refreshSessions(store: store)
+    }
+
+    public func topologyStatusDescription() async -> String {
+        await MacOSProcessTapController.shared.topologyStatusDescription()
+    }
+
+    public func ownedOutputRoutes() -> [MacOSDedicatedOutputRoute] {
+        MacOSDedicatedOutputRouteManager.shared.ownedRoutes()
+    }
+
+    public func selectedOwnedOutputRouteID() -> String? {
+        MacOSDedicatedOutputRouteManager.shared.selectedRouteID()
+    }
+
+    public func selectOwnedOutputRoute(id: String?) async {
+        MacOSDedicatedOutputRouteManager.shared.selectRoute(id: id)
+        _ = await MacOSProcessTapController.shared.refreshSessions(store: store)
+    }
+
+    public func ownedOutputRouteStateDescription() -> String {
+        MacOSDedicatedOutputRouteManager.shared.routeState().statusDescription
     }
 
     private func defaultOutputDeviceID() -> AudioDeviceID? {

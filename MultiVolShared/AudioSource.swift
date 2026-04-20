@@ -5,6 +5,7 @@ public enum AudioSourceKind: String, Codable, CaseIterable, Sendable {
     case microphoneInput
     case media
     case call
+    case application
 }
 
 public struct AudioSource: Identifiable, Codable, Hashable, Sendable {
@@ -20,12 +21,7 @@ public struct AudioSource: Identifiable, Codable, Hashable, Sendable {
 
     public static let defaults: [AudioSource] = [
         .init(id: "system-output", displayName: "Output", kind: .systemOutput),
-        .init(id: "mic-input", displayName: "Mic", kind: .microphoneInput),
-        .init(id: "owned.music", displayName: "Music Bus", kind: .media),
-        .init(id: "owned.call", displayName: "Call Bus", kind: .call),
-        .init(id: "owned.fx", displayName: "Effects Bus", kind: .media),
-        .init(id: "media", displayName: "Media", kind: .media),
-        .init(id: "call", displayName: "Call", kind: .call)
+        .init(id: "mic-input", displayName: "Mic", kind: .microphoneInput)
     ]
 }
 
@@ -39,7 +35,13 @@ public extension AudioSource {
             return sourceID
                 .replacingOccurrences(of: "app.", with: "")
                 .replacingOccurrences(of: ".", with: " ")
+                .replacingOccurrences(of: "-", with: " ")
                 .capitalized
+        }
+
+        if sourceID.hasPrefix("process.") {
+            return sourceID
+                .replacingOccurrences(of: "process.", with: "Process ")
         }
 
         if sourceID.hasPrefix("owned.") {

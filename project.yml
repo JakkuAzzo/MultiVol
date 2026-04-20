@@ -3,7 +3,7 @@ options:
   bundleIdPrefix: com.jakkuazzo
   deploymentTarget:
     iOS: "17.0"
-    macOS: "14.0"
+    macOS: "14.2"
 settings:
   base:
     MARKETING_VERSION: 0.1.0
@@ -83,6 +83,9 @@ targets:
         PRODUCT_NAME: MultiVol macOS
         INFOPLIST_KEY_CFBundleDisplayName: MultiVol
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSAudioCaptureUsageDescription: MultiVol captures routed app audio so you can control each app's volume separately.
+        INFOPLIST_KEY_NSSystemExtensionUsageDescription: MultiVol installs a dedicated audio route so app sessions can be mixed safely through a MultiVol-owned output path.
+        INFOPLIST_KEY_OSBundleUsageDescription: MultiVol installs an audio driver so it can publish a dedicated output route for per-app volume control.
 
   MultiVoliOSWidgetsExtension:
     type: app-extension
@@ -123,6 +126,30 @@ targets:
         APPLICATION_EXTENSION_API_ONLY: YES
         GENERATE_INFOPLIST_FILE: NO
         INFOPLIST_FILE: MultiVolWidgets/Info-macOS.plist
+        INFOPLIST_KEY_NSAudioCaptureUsageDescription: MultiVol captures routed app audio so widget actions can reflect per-app volume sessions.
+
+  MultiVolAudioDriverExtension:
+    type: driver-extension
+    platform: macOS
+    sources:
+      - path: MultiVolDriverKit/Sources
+    entitlements:
+      path: MultiVolDriverKit/Entitlements.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jakkuazzo.multivol.macos.driver
+        PRODUCT_NAME: MultiVol Audio Driver
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: MultiVolDriverKit/Info.plist
+        CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+        CLANG_ENABLE_MODULES: YES
+        SYSTEM_EXTENSION_API_ONLY: YES
+        SDKROOT: driverkit
+        SUPPORTED_PLATFORMS: driverkit
+        DRIVERKIT_DEPLOYMENT_TARGET: 24.0
+        SKIP_INSTALL: NO
+        CODE_SIGN_ENTITLEMENTS: MultiVolDriverKit/Entitlements.plist
+        CODE_SIGNING_ALLOWED: NO
 
   MultiVolSharedTests:
     type: bundle.unit-test

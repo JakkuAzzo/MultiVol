@@ -1,0 +1,26 @@
+#ifndef MultiVolAudioDevice_h
+#define MultiVolAudioDevice_h
+
+#include <Availability.h>
+#include <AudioDriverKit/IOUserAudioDevice.iig>
+
+class MultiVolAudioDevice: public IOUserAudioDevice
+{
+public:
+    virtual bool init(IOUserAudioDriver* in_driver,
+                      bool in_supports_prewarming,
+                      OSString* in_device_uid,
+                      OSString* in_model_uid,
+                      OSString* in_manufacturer_uid,
+                      uint32_t in_zero_timestamp_period) override;
+    virtual void free() override;
+    virtual kern_return_t StartIO(IOUserAudioStartStopFlags in_flags) override;
+    virtual kern_return_t StopIO(IOUserAudioStartStopFlags in_flags) override;
+    virtual kern_return_t PerformDeviceConfigurationChange(uint64_t in_change_action,
+                                                           OSObject* in_change_info) override;
+    virtual kern_return_t AbortDeviceConfigurationChange(uint64_t in_change_action,
+                                                         OSObject* in_change_info) override;
+    virtual kern_return_t HandleChangeSampleRate(double in_sample_rate) override;
+};
+
+#endif

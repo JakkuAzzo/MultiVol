@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'MultiVolMac' in project 'MultiVol'
+➜ Explicit dependency on target 'MultiVolMacWidgetsExtension' in project 'MultiVol'
+➜ Explicit dependency on target 'MultiVolAudioDriverExtension' in project 'MultiVol'
+Target 'MultiVolAudioDriverExtension' in project 'MultiVol' (no dependencies)
+Target 'MultiVolMacWidgetsExtension' in project 'MultiVol' (no dependencies)
